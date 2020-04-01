@@ -26,4 +26,15 @@ const verifyUser = async (payload, done) => {
   }
 };
 
+//미들웨어 함수
+
+export const authenticateJwt = (req, res, next) =>
+  passport.authenticate("jwt", { session: false }, (error, user) => {
+    if (user) {
+      req.user = user;
+    }
+    next();
+  })(req, res, next);
+
 passport.use(new Strategy(jwtOptions, verifyUser));
+passport.initialize();
