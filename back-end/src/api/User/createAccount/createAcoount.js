@@ -5,14 +5,18 @@ export default {
     createAccount: async (_, args) => {
       //console.log(prisma);
       const { username, email, firstName = "", lastName = "", bio = "" } = args;
-      const user = await prisma.createUser({
+      const exists = await prisma.$exists.user({ username });
+      if (exists) {
+        throw Error("같은 이름이 있습니다.");
+      }
+      await prisma.createUser({
         username,
         email,
         firstName,
         lastName,
-        bio
+        bio,
       });
-      return user;
-    }
-  }
+      return true;
+    },
+  },
 };
