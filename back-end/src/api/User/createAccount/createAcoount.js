@@ -5,9 +5,18 @@ export default {
     createAccount: async (_, args) => {
       //console.log(prisma);
       const { username, email, firstName = "", lastName = "", bio = "" } = args;
-      const exists = await prisma.$exists.user({ username });
+      const exists = await prisma.$exists.user({
+        OR: [
+          {
+            username,
+          },
+          {
+            email,
+          },
+        ],
+      });
       if (exists) {
-        throw Error("같은 이름이 있습니다.");
+        throw Error("동일한 이름이나 이메일이 존재합니다.");
       }
       await prisma.createUser({
         username,
