@@ -3,7 +3,6 @@ import reset from "styled-reset";
 
 export default createGlobalStyle`
     ${reset};
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
     *{
         box-sizing:border-box;
         color:${(props) => props.theme.fontColor}

@@ -79,24 +79,26 @@ export default ({
         )}
         {action === "confirm" && (
           <form onSubmit={onSubmit}>
-            <Input placeholder={"인증 문자를 넣으세요."} {...lastName} />
+            <Input placeholder={"인증 문자를 넣으세요."} required {...secret} />
             <Button text={"인증하기"}></Button>
           </form>
         )}
       </Form>
-      <StateChange>
-        {action === "logIn" ? (
-          <>
-            계정이 없으신가요?{" "}
-            <Link onClick={() => setAction("signUp")}>가입하기</Link>
-          </>
-        ) : (
-          <>
-            계정이 있으신가요?{" "}
-            <Link onClick={() => setAction("logIn")}>로그인</Link>
-          </>
-        )}
-      </StateChange>
+      {action !== "confirm" && (
+        <StateChange>
+          {action === "logIn" ? (
+            <>
+              계정이 없으신가요?{" "}
+              <Link onClick={() => setAction("signUp")}>가입하기</Link>
+            </>
+          ) : (
+            <>
+              계정이 있으신가요?{" "}
+              <Link onClick={() => setAction("logIn")}>로그인</Link>
+            </>
+          )}
+        </StateChange>
+      )}
     </Wrapper>
   );
 };
