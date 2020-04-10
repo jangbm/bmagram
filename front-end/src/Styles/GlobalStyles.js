@@ -10,7 +10,7 @@ export default createGlobalStyle`
     }
     body{
         background-color:${(props) => props.theme.bgColor};
-        font-family:-apple-system,  'Nanum Pen Script', BlinkMacSystemFont, cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:-apple-system, 'Noto Sans KR', BlinkMacSystemFont, cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         color:${(props) => props.theme.fontColor}
 
     }
@@ -22,7 +22,10 @@ export default createGlobalStyle`
         outline:none;
     }
     button{
-        font-family:-apple-system,  'Nanum Pen Script', BlinkMacSystemFont, cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:-apple-system, 'Noto Sans KR', BlinkMacSystemFont, cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    input{
+        font-family:-apple-system, 'Noto Sans KR', BlinkMacSystemFont, cursive, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
 `;

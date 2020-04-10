@@ -10,9 +10,7 @@ export default {
           {
             username,
           },
-          {
-            email,
-          },
+          { email },
         ],
       });
       if (exists) {

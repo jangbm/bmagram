@@ -5,6 +5,9 @@ const Footer = styled.footer`
   font-size: 14px;
   display: flex;
   justify-content: space-between;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 30px 0px;
 `;
 
 const List = styled.ul`
@@ -18,11 +21,11 @@ const ListItem = styled.li`
 `;
 
 const Link = styled.a`
-  color: rgba(0, 0, 0, 0.8);
+  color: ${(props) => props.theme.blueColor};
 `;
 
 const Copyright = styled.span`
-  color: rgba(0, 0, 0, 0.8);
+  color: ${(props) => props.theme.blueColor};
 `;
 
 export default () => (
